@@ -2,10 +2,23 @@ let input = document.querySelector("input");
 let btn = document.querySelector("button");
 let ul = document.querySelector("ul");
 
-btn.addEventListener("click",function(){
+btn.addEventListener("click", function () {
     let li = document.createElement('li');
-    li.innerText = input.value;
+    let del = document.createElement('button');
+    del.innerText = "Delete";
+    del.classList.add("delete");
+    li.innerText = input.value + " ";
+    li.appendChild(del);
     ul.appendChild(li);
-    input.value='';
+    input.value = '';
 })
+
+let cross = document.querySelectorAll(".delete");
+
+for (crs of cross) {
+    crs.addEventListener("click", function () {
+        console.log(this.parentElement);
+        this.parentElement.remove();
+    })
+}
 
