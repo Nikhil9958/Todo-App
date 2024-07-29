@@ -13,12 +13,17 @@ btn.addEventListener("click", function () {
     input.value = '';
 })
 
-let cross = document.querySelectorAll(".delete");
+// let cross = document.querySelectorAll(".delete");
 
-for (crs of cross) {
-    crs.addEventListener("click", function () {
-        console.log(this.parentElement);
-        this.parentElement.remove();
-    })
-}
+// for (crs of cross) {
+//     crs.addEventListener("click", function () {
+//         console.log(this.parentElement);
+//         this.parentElement.remove();
+//     })
+// }
+
+ul.addEventListener('click',function(event){
+    if(event.target.nodeName == "BUTTON")
+        event.target.parentElement.remove();
+})
 
